@@ -1,79 +1,122 @@
 package trucks.domain;
 
+import java.time.LocalDateTime;
+
 public class Truck {
 
-    private int idCaminhao = 0;
-    private String name;
-    private String modelo;
-    private int ano;
-    private double kmAtual;
-    private String status;
+    private int truckId = 0;
+    private String plateNumber;
+    private String brand;
+    private String model;
+    private int year;
+    private Double capacityKg;
+    private TruckStatus truckStatus;
+    private boolean deleted;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
-    public int getIdCaminhao() {
-        return idCaminhao;
+    public int getTruckId() {
+        return truckId;
     }
 
-    public void setIdCaminhao(int idCaminhao) {
-        this.idCaminhao = idCaminhao;
+    public void setTruckId(int truckId) {
+        this.truckId = truckId;
     }
 
-    public String getName() {
-        return name;
+    public String getPlateNumber() {
+        return plateNumber;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPlateNumber(String plateNumber) {
+        this.plateNumber = plateNumber;
     }
 
-    public String getModelo() {
-        return modelo;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public int getAno() {
-        return ano;
+    public String getModel() {
+        return model;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public double getKmAtual() {
-        return kmAtual;
+    public int getYear() {
+        return year;
     }
 
-    public void setKmAtual(double kmAtual) {
-        this.kmAtual = kmAtual;
+    public void setYear(int year) {
+        this.year = year;
     }
 
-    public String getStatus() {
-        return status;
+    public Double getCapacityKg() {
+        return capacityKg;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCapacityKg(Double capacityKg) {
+        this.capacityKg = capacityKg;
     }
 
-    public Truck(String id, String name, String modelo, int ano, double kmAtual, String status) {
-
-
+    public TruckStatus getTruckStatus() {
+        return truckStatus;
     }
+
+    public void setTruckStatus(TruckStatus truckStatus) {
+        this.truckStatus = truckStatus;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
+
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    //public enum DiaSemana { SEGUNDA, TERCA, QUARTA, ... }.
+
+
+    //5️⃣ Exemplo mental (sem código)
+    //Em vez de:
+    //setStatus(IN_TRIP)
+    //setDeleted(true)
+    //Você pensa em ações:
+    //“entrar em viagem”
+    //“ir para manutenção”
+    //“desativar”
+    //Cada ação:
+    //muda o status
+    //valida se pode
+
 
     @Override
     public String toString() {
         return "Truck{" +
-                "id='" + idCaminhao + '\'' +
-                ", name='" + name + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", ano=" + ano +
-                ", kmAtual=" + kmAtual +
-                ", status='" + status + '\'' +
+                "truckId=" + truckId +
+                ", plateNumber='" + plateNumber + '\'' +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                ", capacityKg=" + capacityKg +
+                ", truckStatus=" + truckStatus +
+                ", deleted=" + deleted +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
-//regras internas do caminhão (ex: não pode diminuir km)
-
-
 }

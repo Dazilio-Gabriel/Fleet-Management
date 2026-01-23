@@ -9,4 +9,12 @@ public class TruckService {
     //placa já existe?
     //pode mudar status?
     //pode atualizar km?
+
+    //startTrip
+    //sendToMaintenance
+
+    //criar caminhão
+    //mudar status
+    //listar disponíveis
+    //desativar
 }

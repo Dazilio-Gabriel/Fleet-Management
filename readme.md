@@ -41,7 +41,7 @@ RESTful APIs.
 ### Running the project
 
 ```bash
-  git clone https://github.com/Dazilio-Gabriel/Fleet-Management.git
+git clone https://github.com/Dazilio-Gabriel/Fleet-Management.git
 cd Fleet-Management
 ./mvnw spring-boot:run
 ```
@@ -49,7 +49,7 @@ cd Fleet-Management
 The application will start at:
 
 ```bash
-  http://localhost:8080
+http://localhost:8080
 ```
 
 ---
@@ -57,12 +57,13 @@ The application will start at:
 ## 📡 API Example
 
 ```bash
-  GET /api/trucks
+GET /api/trucks
 ```
 
 Response:
 
 ```bash
+JSON: 
 
 [
   {
