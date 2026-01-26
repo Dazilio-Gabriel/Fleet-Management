@@ -1,3 +1,20 @@
 spring:
   application:
     name: fleet-management
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fleet_management
+    username: gabrieldaziliofanchiotti
+    password: ""
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: fleet
+    open-in-view: false
+
+  flyway:
+    enabled: false

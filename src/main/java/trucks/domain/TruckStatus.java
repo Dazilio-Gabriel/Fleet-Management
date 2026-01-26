@@ -1,6 +1,8 @@
 package trucks.domain;
 
 public enum TruckStatus {
-    AVAILABLE, IN_TRIP, IN_MAINTENANCE, INACTIVE;
+    AVAILABLE,
+    IN_MAINTENANCE,
+    INACTIVE;
 
 }

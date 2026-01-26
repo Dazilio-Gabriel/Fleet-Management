@@ -1,34 +1,59 @@
 package trucks.domain;
 
-import java.time.LocalDateTime;
+import jakarta.persistence.*;
 
+import java.time.OffsetDateTime;
+
+@Entity
+@Table(name = "truck", schema = "fleet")
 public class Truck {
 
-    private int truckId = 0;
-    private String plateNumber;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "plate", nullable = false, unique = true)
+    private String plate;
+
+    @Column(name = "brand")
     private String brand;
+
+    @Column(name = "model")
     private String model;
+
+    @Column(name = "year", nullable = false)
     private int year;
-    private Double capacityKg;
-    private TruckStatus truckStatus;
-    private boolean deleted;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
-    public int getTruckId() {
-        return truckId;
+    @Column(name = "capacity_kg" )
+    private Integer capacity_kg;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private TruckStatus status;
+
+    @Column(name = "sr_deleted", nullable = false)
+    private boolean sr_deleted;
+
+    @Column(name = "created_at", nullable = false)
+    private OffsetDateTime created_at;
+
+    @Column(name = "updated_at", nullable = false)
+    private OffsetDateTime updated_at;
+
+    public long getId() {
+        return id;
     }
 
-    public void setTruckId(int truckId) {
-        this.truckId = truckId;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getPlateNumber() {
-        return plateNumber;
+    public String getPlate() {
+        return plate;
     }
 
-    public void setPlateNumber(String plateNumber) {
-        this.plateNumber = plateNumber;
+    public void setPlate(String plate) {
+        this.plate = plate;
     }
 
     public String getBrand() {
@@ -55,68 +80,59 @@ public class Truck {
         this.year = year;
     }
 
-    public Double getCapacityKg() {
-        return capacityKg;
+    public Integer getCapacity_kg() {
+        return capacity_kg;
     }
 
-    public void setCapacityKg(Double capacityKg) {
-        this.capacityKg = capacityKg;
+    public void setCapacity_kg(Integer capacity_kg) {
+        this.capacity_kg = capacity_kg;
     }
 
-    public TruckStatus getTruckStatus() {
-        return truckStatus;
+    public TruckStatus getStatus() {
+        return status;
     }
 
-    public void setTruckStatus(TruckStatus truckStatus) {
-        this.truckStatus = truckStatus;
+    public void setStatus(TruckStatus status) {
+        this.status = status;
     }
 
-    public boolean isDeleted() {
-        return deleted;
+    public boolean isSr_deleted() {
+        return sr_deleted;
     }
 
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
+    public void setSr_deleted(boolean sr_deleted) {
+        this.sr_deleted = sr_deleted;
     }
 
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public OffsetDateTime getCreated_at() {
+        return created_at;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setCreated_at(OffsetDateTime created_at) {
+        this.created_at = created_at;
     }
 
-    //public enum DiaSemana { SEGUNDA, TERCA, QUARTA, ... }.
+    public OffsetDateTime getUpdated_at() {
+        return updated_at;
+    }
 
-
-    //5️⃣ Exemplo mental (sem código)
-    //Em vez de:
-    //setStatus(IN_TRIP)
-    //setDeleted(true)
-    //Você pensa em ações:
-    //“entrar em viagem”
-    //“ir para manutenção”
-    //“desativar”
-    //Cada ação:
-    //muda o status
-    //valida se pode
-
+    public void setUpdated_at(OffsetDateTime updated_at) {
+        this.updated_at = updated_at;
+    }
 
     @Override
     public String toString() {
         return "Truck{" +
-                "truckId=" + truckId +
-                ", plateNumber='" + plateNumber + '\'' +
+                "id=" + id +
+                ", plate='" + plate + '\'' +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", year=" + year +
-                ", capacityKg=" + capacityKg +
-                ", truckStatus=" + truckStatus +
-                ", deleted=" + deleted +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
+                ", capacity_kg=" + capacity_kg +
+                ", status=" + status +
+                ", sr_deleted=" + sr_deleted +
+                ", created_at=" + created_at +
+                ", updated_at=" + updated_at +
                 '}';
     }
 }
