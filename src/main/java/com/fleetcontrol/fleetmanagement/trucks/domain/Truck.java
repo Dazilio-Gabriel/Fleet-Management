@@ -1,4 +1,4 @@
-package trucks.domain;
+package com.fleetcontrol.fleetmanagement.trucks.domain;
 
 import jakarta.persistence.*;
 
@@ -24,7 +24,7 @@ public class Truck {
     @Column(name = "year", nullable = false)
     private int year;
 
-    @Column(name = "capacity_kg" )
+    @Column(name = "capacity_kg")
     private Integer capacity_kg;
 
     @Enumerated(EnumType.STRING)
@@ -122,17 +122,6 @@ public class Truck {
 
     @Override
     public String toString() {
-        return "Truck{" +
-                "id=" + id +
-                ", plate='" + plate + '\'' +
-                ", brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", year=" + year +
-                ", capacity_kg=" + capacity_kg +
-                ", status=" + status +
-                ", sr_deleted=" + sr_deleted +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                '}';
+        return "Truck{" + "id=" + id + ", plate='" + plate + '\'' + ", brand='" + brand + '\'' + ", model='" + model + '\'' + ", year=" + year + ", capacity_kg=" + capacity_kg + ", status=" + status + ", sr_deleted=" + sr_deleted + ", created_at=" + created_at + ", updated_at=" + updated_at + '}';
     }
 }
