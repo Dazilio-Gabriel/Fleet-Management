@@ -17,6 +17,7 @@ public class TruckService {
 
     public List<Truck> listAllTrucks() {
         return truckRepository.findAll();
+
     }
 
 }
