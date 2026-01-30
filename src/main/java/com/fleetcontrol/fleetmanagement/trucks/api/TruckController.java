@@ -1,10 +1,9 @@
 package com.fleetcontrol.fleetmanagement.trucks.api;
 
+import com.fleetcontrol.fleetmanagement.trucks.api.dto.TruckCreateRequest;
 import com.fleetcontrol.fleetmanagement.trucks.application.TruckService;
 import com.fleetcontrol.fleetmanagement.trucks.domain.Truck;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +22,10 @@ public class TruckController {
         return truckService.listAllTrucks();
     }
 
+    @PostMapping
+    public void createTruck(@RequestBody TruckCreateRequest request) {
+        truckService.creatTruck(request);
+
+    }
 
 }
-
